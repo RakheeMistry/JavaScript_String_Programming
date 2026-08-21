@@ -30,3 +30,7 @@ console.log(str1.includes(NaN));
 console.log(str1.includes(404)); // true
 console.log(str1.includes("404")); // false
 
+// Note: Two identical-looking objects are not the same unless they point to the exact same reference in memory.
+const items = [{id:1}, {id:2}];
+console.log(items.includes({id:1}));
+
