@@ -1,5 +1,5 @@
 // includes() with strings
-const str = "Hello Javascript world!";
+const str = "Hello Javascript world! NaN";
 // Rule 1: Substring Search -> It checks if the exact sequence of charaters exists anywhere within the string.
 console.log(str.includes("world")); // true
 
@@ -8,6 +8,9 @@ console.log(str.includes("hello")); // false
 
 // Rule 3: Optional Position -> The second argument specifies the character position where the search should begin (defaults to 0).
 console.log(str.includes("Javascript", 2));
+
+// Rule 4: NaN Support -> find NaN inside an String
+console.log(str.includes(NaN)); // true. Because coerced to string.
 
 /****************************************************************************************************/
 
@@ -28,9 +31,17 @@ console.log(str1.includes(NaN));
 
 // Rule 5: Exact Match -> Array includes() uses strict equality (===) to determine if an element exists. This means types must match exactly, and references matter for objects and arrays.
 console.log(str1.includes(404)); // true
-console.log(str1.includes("404")); // false
+console.log(str1.includes("404")); // false. Because array does not coerce types
 
 // Note: Two identical-looking objects are not the same unless they point to the exact same reference in memory.
 const items = [{id:1}, {id:2}];
 console.log(items.includes({id:1}));
 
+// Store the Reference (If Using includes)
+// If you keep a variable holding the actual reference to the object in the array, includes() works as expected:
+
+const item1 = { id: 1 };
+const item2 = { id: 2 };
+const item3 = [item1, item2];
+
+console.log(item3.includes(item1)); // true
