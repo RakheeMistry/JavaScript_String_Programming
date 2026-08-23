@@ -1,7 +1,7 @@
 // Rule 1: Extracted from startIndex upto (but not including) endIndex.
 const str = "Javascript";
-console.log(str.slice(1,6));
-console.log(str.substring(2,6));
+console.log(str.slice(1,6)); // avasc
+console.log(str.substring(2,6)); // vasc
 
 // Rule 2: If startIndex > endIndex 
 console.log(str.slice(8,2)); // Returns an empty string ("")
