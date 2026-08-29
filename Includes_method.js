@@ -10,7 +10,7 @@ console.log(str.includes("hello")); // false
 console.log(str.includes("Javascript", 2));
 
 // Rule 4: NaN Support -> find NaN inside an String
-console.log(str.includes(NaN)); // true. Because coerced to string.
+console.log(str.includes(NaN)); // true. Because NaN coerced to string "NaN".
 
 /****************************************************************************************************/
 
