@@ -16,6 +16,9 @@ console.log(`Extracted String: ${str.slice(-4)}`); // Counts backward from the e
 // Rule 5: Negative Start Index and Negative End Index
 console.log(`Extracted String: ${str.slice(-7,-2)}`); // Returns "autif" (from index 2 to 7)
 
+// Rule 6: Starting Index is NaN or undefined
+console.log(`Extracted String: ${str.slice(undefined, 5)}`); // Returns "Beaut" (from index 0 to 4)
+console.log(`Extracted String: ${str.slice(NaN, 5)}`); // Returns "Beaut" (from index 0 to 4)
 
 
 
