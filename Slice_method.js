@@ -16,7 +16,7 @@ console.log(`Extracted String: ${str.slice(-4)}`); // Counts backward from the e
 // Rule 5: Negative Start Index and Negative End Index
 console.log(`Extracted String: ${str.slice(-7,-2)}`); // Returns "autif" (from index 2 to 7)
 
-// Note: NaN Coerces to 0 and undefined is treated as the string's length or default value for that parameter.
+// Note: NaN Coerces to 0, null Coerces to 0, and undefined is treated as the string's length or default value for that parameter.
 // Rule 6: Starting Index is NaN or undefined
 console.log(`Extracted String: ${str.slice(undefined, 5)}`); // Returns "Beaut" (from index 0 to 4)
 console.log(`Extracted String: ${str.slice(NaN, 5)}`); // Returns "Beaut" (from index 0 to 4)
@@ -28,6 +28,9 @@ console.log(`Extracted String: ${str.slice(2, NaN)}`); // Returns ""
 // Rule 8: Both Starting and Ending Index are NaN or undefined
 console.log(`Extracted String: ${str.slice(undefined, undefined)}`); // Returns "Beautiful" (from index 0 to the end of the string)
 console.log(`Extracted String NaN: ${str.slice(NaN, NaN)}`); // Returns ""
+
+// Rule 9: Both Starting and Ending Index are decimal value
+console.log(`Extracted String: ${str.slice("2.5", "7.5")}`); // Returns "autif" via internal ToIntegerOrInfinity conversion of the decimal values to integers (2 and 7 respectively)
 
 //********** Slice Method with Arrays **********//
 // const arr = [1, 2, 3];
