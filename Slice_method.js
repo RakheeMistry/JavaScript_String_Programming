@@ -32,6 +32,9 @@ console.log(`Extracted String NaN: ${str.slice(NaN, NaN)}`); // Returns ""
 // Rule 9: Both Starting and Ending Index are decimal value
 console.log(`Extracted String: ${str.slice("2.5", "7.5")}`); // Returns "autif" via internal ToIntegerOrInfinity conversion of the decimal values to integers (2 and 7 respectively)
 
+// Rule 10: Both Starting and Ending Index are boolean value
+console.log(`Extracted String: ${str.slice(true, false)}`); // Returns "" via internal ToIntegerOrInfinity conversion of the boolean values to integers (1 and 0 respectively)
+
 //********** Slice Method with Arrays **********//
 // const arr = [1, 2, 3];
 // // Rule 4: Extracted from startIndex upto (but not including) endIndex.
