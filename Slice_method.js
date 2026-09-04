@@ -35,6 +35,16 @@ console.log(`Extracted String: ${str.slice("2.5", "7.5")}`); // Returns "autif" 
 // Rule 10: Both Starting and Ending Index are boolean value
 console.log(`Extracted String: ${str.slice(true, false)}`); // Returns "" via internal ToIntegerOrInfinity conversion of the boolean values to integers (1 and 0 respectively)
 
+// Rule 11: Both Starting or Ending Index are array value
+console.log([3].toString()); // Returns "3" via internal ToIntegerOrInfinity conversion of the array to integer (3)
+console.log(`Extracted String: ${str.slice(2, [5])}`); // Returns "ut" via internal ToIntegerOrInfinity conversion of the array values to integers (3 and 5 respectively)
+console.log(`Extracted String: ${str.slice([2], 7)}`); // Returns "autif" via internal ToIntegerOrInfinity conversion of the array values to integers (2 and 5 respectively)
+
+// Rule 12: Both Starting or Ending Index are Infinity value
+console.log(`Extracted String: ${str.slice(2, Infinity)}`); // Returns "autiful" via internal ToIntegerOrInfinity conversion of the Infinity value to integer (string.length)
+console.log(`Extracted String: ${str.slice(-Infinity, 5)}`); // Returns "Beaut" via internal ToIntegerOrInfinity conversion of the Infinity value to integer (0)
+console.log(`Extracted String: ${str.slice(-Infinity, Infinity)}`); // Returns "Beautiful" via internal ToIntegerOrInfinity conversion of the Infinity value to integer (0 and string.length respectively)
+
 //********** Slice Method with Arrays **********//
 // const arr = [1, 2, 3];
 // // Rule 4: Extracted from startIndex upto (but not including) endIndex.
