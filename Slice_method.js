@@ -48,16 +48,22 @@ console.log(`Extracted String: ${str.slice(-Infinity, Infinity)}`); // Returns "
 //********** Slice Method with Arrays **********//
 const arr = [1, 2, 3];
 // Rule 4: Extracted from startIndex upto (but not including) endIndex.
-console.log(`Extracted: ${arr.slice(1,3)}`);
+console.log(`Extraction of array elements: ${arr.slice(1,3)}`);
 
 // Rule 5: If startIndex >= endIndex
-console.log(`Empty: ${arr.slice(3,1)}`); // Returns an empty array ([])
+console.log(`Empty array: ${arr.slice(3,1)}`); // Returns an empty array ([])
 // Rule 6: Start Index Greater than Array Length
-console.log(`Empty: ${arr.slice(5)}`); // If startIndex is greater than the array's total length, method returns an empty array ([])
+console.log(`Empty array: ${arr.slice(5)}`); // If startIndex is greater than the array's total length, method returns an empty array ([])
 
 // Rule 7: Negative Index
-console.log(`Extracted: ${arr.slice(-2)}`); // Counts backward from the end of the array
-console.log(`Extracted: ${arr.slice(-3,-1)}`); // Returns [1, 2] (from index 0 to 1)
+console.log(`Extraction of array elements: ${arr.slice(-2)}`); // Counts backward from the end of the array
+console.log(`Extraction of array elements: ${arr.slice(-3,-1)}`); // Returns [1, 2] (from index 0 to 1)
 // **Formula: A negative index is treated mathematically as (array.length + index) => 3 + (-2) => 1.
 
-// Rule 8: 
+// Rule 8: Both Starting and Ending Index are NaN or undefined
+console.log(`Extraction of array elements: ${arr.slice(undefined, 2)}`); // Returns [1, 2] (from index 0 to 1)
+console.log(`Extraction of array elements: ${arr.slice(NaN, 2)}`); // Returns [1, 2] (from index 0 to 1)
+console.log(`Extraction of array elements: ${arr.slice(1, undefined)}`); // Returns [2, 3] (from index 1 to the end of the array)
+console.log(`Extraction of array elements: ${arr.slice(1, NaN)}`); // Returns [] (from index 1 to 0)
+console.log(`Extraction of array elements: ${arr.slice(undefined, undefined)}`); // Returns [1, 2, 3] (from index 0 to the end of the array)
+console.log(`Extraction of array elements: ${arr.slice(NaN, NaN)}`); // Returns [] (from index 0 to 0)         
