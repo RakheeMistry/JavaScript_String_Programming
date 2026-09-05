@@ -46,16 +46,18 @@ console.log(`Extracted String: ${str.slice(-Infinity, 5)}`); // Returns "Beaut" 
 console.log(`Extracted String: ${str.slice(-Infinity, Infinity)}`); // Returns "Beautiful" via internal ToIntegerOrInfinity conversion of the Infinity value to integer (0 and string.length respectively)
 
 //********** Slice Method with Arrays **********//
-// const arr = [1, 2, 3];
-// // Rule 4: Extracted from startIndex upto (but not including) endIndex.
-// console.log(`Extracted: ${arr.slice(1,3)}`);
+const arr = [1, 2, 3];
+// Rule 4: Extracted from startIndex upto (but not including) endIndex.
+console.log(`Extracted: ${arr.slice(1,3)}`);
 
-// // Rule 5: If startIndex >= endIndex
-// console.log(`Empty: ${arr.slice(3,1)}`); // Returns an empty array ([])
-// // Rule 6: Start Index Greater than Array Length
-// console.log(`Empty: ${arr.slice(5)}`); // If startIndex is greater than the array's total length, method returns an empty array ([])
+// Rule 5: If startIndex >= endIndex
+console.log(`Empty: ${arr.slice(3,1)}`); // Returns an empty array ([])
+// Rule 6: Start Index Greater than Array Length
+console.log(`Empty: ${arr.slice(5)}`); // If startIndex is greater than the array's total length, method returns an empty array ([])
 
-// // Rule 7: Negative Index
-// console.log(`Extracted: ${arr.slice(-2)}`); // Counts backward from the end of the array
-// // **Formula: A negative index is treated mathematically as (array.length + index) => 3 + (-2) => 1.
+// Rule 7: Negative Index
+console.log(`Extracted: ${arr.slice(-2)}`); // Counts backward from the end of the array
+console.log(`Extracted: ${arr.slice(-3,-1)}`); // Returns [1, 2] (from index 0 to 1)
+// **Formula: A negative index is treated mathematically as (array.length + index) => 3 + (-2) => 1.
 
+// Rule 8: 
