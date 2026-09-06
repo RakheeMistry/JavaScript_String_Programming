@@ -67,3 +67,14 @@ console.log(`Extraction of array elements: ${arr.slice(1, undefined)}`); // Retu
 console.log(`Extraction of array elements: ${arr.slice(1, NaN)}`); // Returns [] (from index 1 to 0)
 console.log(`Extraction of array elements: ${arr.slice(undefined, undefined)}`); // Returns [1, 2, 3] (from index 0 to the end of the array)
 console.log(`Extraction of array elements: ${arr.slice(NaN, NaN)}`); // Returns [] (from index 0 to 0)         
+
+// Rule 9: Object & Array Mutation vs Reassignment
+const original = [{ val: 1 }, [2, 3], 4];
+// console.log(original);
+const copy = original.slice(0, 2);
+copy[0].val = 10; // Mutates the object in the original array
+copy[1][0] = 20; // Mutates the array in the original array
+copy[1] = [99]; // Reassigns the array in the copy, but does not affect the original array
+console.log(original[0].val, original[1][0]);
+// console.log(original);
+// console.log(copy);
