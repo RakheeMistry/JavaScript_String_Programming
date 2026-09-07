@@ -78,3 +78,10 @@ copy[1] = [99]; // Reassigns the array in the copy, but does not affect the orig
 console.log(original[0].val, original[1][0]);
 // console.log(original);
 // console.log(copy);
+
+// Rule 10: Sparse Array Behavior
+const sparse = [1, , 3];
+const sub = sparse.slice(0, 3);
+const mapped = sub.map(x => x ?? "default");
+// You might expect the missing value to become "default", but map() does not execute its callback for empty slots in sparse arrays.
+console.log(0 in mapped, 1 in mapped, mapped[1]); // index 1 is not present in the mapped array, so it returns "false" and undefined for the value at that index.
