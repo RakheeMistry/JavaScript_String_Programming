@@ -15,5 +15,8 @@ console.log(str.substring(-2,-3)); // Treats NAN as 0
 console.log(str.substring(NaN,3)); // Treats NAN as 0
 console.log(`Swap: ${str.substring(2,NaN)}`); // Treats NAN as 0
 
-// Rule 4: The Equal Index Rule
+// Rule 5: The Equal Index Rule
 console.log(str.substring(4,4)); // If both indices are equal, the method returns an empty string ("")
+
+// Rule 6: The Out of Range Rule
+console.log(str.substring(2,10)); // If endIndex is greater than the string length, it extracts upto the end of the string
