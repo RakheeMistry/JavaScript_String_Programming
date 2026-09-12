@@ -31,3 +31,8 @@ console.log(str.substring(true,false)); // Boolean values are converted to integ
 // Note: Passing undefined as the start/end argument triggers default parameter
 console.log(str.substring(undefined,undefined)); // If both indices are undefined, the method returns the entire string 
 console.log(str.substring(undefined,3)); // If startIndex is undefined, it is treated as 0
+
+// Rule 10: Both Starting and Ending Index are null
+console.log(str.substring(null,null)); // If both indices are null, the method returns an empty string ("")
+console.log(str.substring(null,3)); // If startIndex is null, it is treated as 0
+console.log(str.substring(2,null)); // If endIndex is null, it is treated as 0
