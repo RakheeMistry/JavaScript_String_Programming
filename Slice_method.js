@@ -29,7 +29,7 @@ console.log(`Extracted String: ${str.slice(2, NaN)}`); // Returns ""
 console.log(`Extracted String: ${str.slice(undefined, undefined)}`); // Returns "Beautiful" (from index 0 to the end of the string)
 console.log(`Extracted String NaN: ${str.slice(NaN, NaN)}`); // Returns ""
 
-// Rule 9: Both Starting and Ending Index are decimal value
+// Rule 9:    
 console.log(`Extracted String: ${str.slice("2.5", "7.5")}`); // Returns "autif" via internal ToIntegerOrInfinity conversion of the decimal values to integers (2 and 7 respectively)
 
 // Rule 10: Both Starting and Ending Index are boolean value
@@ -59,6 +59,7 @@ console.log(`Empty array: ${arr.slice(5)}`); // If startIndex is greater than th
 console.log(`Extraction of array elements: ${arr.slice(-2)}`); // Counts backward from the end of the array
 console.log(`Extraction of array elements: ${arr.slice(-3,-1)}`); // Returns [1, 2] (from index 0 to 1)
 // **Formula: A negative index is treated mathematically as (array.length + index) => 3 + (-2) => 1.
+console.log(`Extraction of array elements: ${arr.slice(-1,-3)}`); // Returns [] (from index 2 to 0)
 
 // Rule 8: Both Starting and Ending Index are NaN or undefined
 console.log(`Extraction of array elements: ${arr.slice(undefined, 2)}`); // Returns [1, 2] (from index 0 to 1)
